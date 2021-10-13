@@ -1,0 +1,1 @@
+web: gunicorn covid19_panic_button --log-file -
