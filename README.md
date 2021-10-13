@@ -13,7 +13,7 @@ Nama anggota kelompok:
 | 2006597632 | Adham Muhammad Farid |
 | 2006596371 | Adrian Larry Ananda Sudarthio |
 
-[Link Heroku](isi link)
+[https://covid19-panic-button.herokuapp.com/]
 
 Pada project PBP ini, kelompok kami membuat sebuah panic button yang berisi segala informasi dan hal yang dapat dilakukan oleh orang yang terjangkit virus COVID-19.
 Informasi ini diantaranya adalah:
