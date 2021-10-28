@@ -7,13 +7,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{hospitals}}</h1>
-    <!-- {% if hospitals %}
-    {% for hospital in hospitals %}
-    <tr>
-        <td>www.google.com/maps/place/?q=place_id:{{hospital.place_id}}</td>
-    </tr>
-    {% endfor %}
-    {% endif %} -->
+    <div>
+        <form action="", method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="submit">
+        </form>
+    </div>
 </body>
 </html>
