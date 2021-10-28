@@ -1,0 +1,140 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Quiz</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" type="text/javascript" href="{% static '\js\quiz_index.js' %}"> -->
+
+</head>
+<body>
+    <div class="nav-bar"><h1>Navbar</h1></div>
+    <div class="container">
+        <div class="question-container" id="q">
+            <p id="question">Halo, Masukan nama anda dibawah ini</p>
+        </div>
+        <div class="answer-container" id="a">
+            <div id="a0-con">
+                <input type="text" id="nama">
+            </div>
+            <div id="a1-con" hidden> 
+                <input type="radio" name="a1" id="yes1" value=6 class="jawab"> <label for="yes1">Ya</label> <br>
+                <input type="radio" name="a1" id="sebagian1" value=5 class="jawab"> <label for="sebagian1">Sebagian</label> <br>
+                <input type="radio" name="a1" id="no1" value=0 class="jawab"> <label for="no1">Tidak</label> 
+            </div>
+            
+            <div id="a2-con" hidden> 
+                <input type="radio" name="a2" id="keluarga2" value=4 class="jawab"> <label for="keluarga2">Ya, dengan keluarga</label><br>
+                <input type="radio" name="a2" id="rekan2" value=1 class="jawab"> <label for="rekan2">Ya, dengan rekan kerja</label><br>
+                <input type="radio" name="a2" id="no2" value=0 class="jawab"> <label for="no2">Tidak</label>
+            </div>
+
+            <div id="a3-con" hidden>
+                <input type="checkbox" name="a3" id="deman" value=3 class="jawab"> <label for="demam">Demam</label><br>
+                <input type="checkbox" name="a3" id="weakness" value=3 class="jawab"> <label for="weakness">Lemah Lesu</label><br>
+                <input type="checkbox" name="a3" id="kelelahan" value=3 class="jawab"> <label for="kelelahan">Kelelahan</label><br>
+                <input type="checkbox" name="a3" id="hypoxia" value=3 class="jawab"> <label for="hypoxia">Sesak Napas</label><br>
+                <input type="checkbox" name="a3" id="dizzy" value=3 class="jawab"> <label for="dizzy"></label>Pusing<br>
+                <input type="checkbox" name="a3" id="batuk" value=3 class="jawab"> <label for="batuk"></label>Batuk Kering<br>
+                <input type="checkbox" name="a3" id="st" value=3 class="jawab"> <label for="st">Sakit Tenggorokan</label><br>
+                <input type="checkbox" name="a3" id="sinusitis" value=3 class="jawab"> <label for="sinusitis">Sinusitis</label><br>
+                <input type="checkbox" name="a3" id="rhinorrhea" value=3 class="jawab"> <label for="rhinorrhea">Hidung Meler</label><br>
+                <input type="checkbox" name="a3" id="congestion" value=3 class="jawab"> <label for="congestion">Hidung Tersumbat</label><br>
+                <input type="checkbox" name="a3" id="headache" value=3 class="jawab"> <label for="headache">Sakit Kepala</label><br>
+                <input type="checkbox" name="a3" id="myalgia" value=3 class="jawab"> <label for="myalgia">Nyeri Otot</label><br>
+                <input type="checkbox" name="a3" id="sendu" value=3 class="jawab"> <label for="sendu"> Nyeri Sendi</label><br>
+                <input type="checkbox" name="a3" id="conjunctival" value=3 class="jawab"> <label for="conjunctival">Mata Merah</label><br>
+                <input type="checkbox" name="a3" id="lbp" value=3 class="jawab"> <label for="lbp">Nyeri Punggung Bawah</label><br>
+                <input type="checkbox" name="a3" id="ubp" value=3 class="jawab"> <label for="ubp">Nyeri Punggung Atas</label><br>
+                <input type="checkbox" name="a3" id="lp" value=3 class="jawab"> <label for="lp">Sakit Kaki</label><br>
+                <input type="checkbox" name="a3" id="cp" value=3 class="jawab"> <label for="cp">Sakit Leher Rahim</label><br>
+                <input type="checkbox" name="a3" id="rop" value=3 class="jawab"> <label for="rop"> Nyeri Dibelakang Mata</label><br>
+                <input type="checkbox" name="a3" id="diare" value=3 class="jawab"> <label for="diare">Diare</label><br>
+                <input type="checkbox" name="a3" id="nausea" value=3 class="jawab"> <label for="nausea">Mual</label><br>
+                <input type="checkbox" name="a3" id="ap" value=3 class="jawab"> <label for="ap">Sakit Perut</label><br>
+            </div>
+
+            <div id="a4-con" hidden>
+                <input type="radio" name="a4" id="yes4" value=5 class="jawab"> <label for="yes4">Ya</label> <br>
+                <input type="radio" name="a4" id="no4" value=0 class="jawab"> <label for="no4">Tidak</label> <br>
+                <input type="radio" name="a4" id="tidaktau4" value=0 class="jawab"> <label for="tidaktau4">Tidak Tahu</label> 
+            </div>
+
+            <div id="a5-con" hidden>
+                <input type="radio" name="a5" id="yes5" value=5 class="jawab"> <label for="yes5">Ya</label> <br>
+                <input type="radio" name="a5" id="no5" value=0 class="jawab"> <label for="no5">Tidak</label> <br>
+                <input type="radio" name="a5" id="tidaktau5" value=0 class="jawab"> <label for="tidaktau5">Tidak Tahu</label> 
+            </div>
+            <div id="a6-con" hidden>
+                <input type="checkbox" name="a6" id="kesehatan" value="true" class="tipe"> <label for="kesehatan">Petugas kesehatan</label><br>
+                <input type="checkbox" name="a6" id="orang-tua" value="true" class="tipe"> <label for="orang-tua">Orang tua (diatas 65)</label><br>
+                <input type="checkbox" name="a6" id="anak" value="true" class="tipe"> <label for="anak">Anak-anak (dibawah 18)</label><br>
+                <input type="checkbox" name="a6" id="jantung" value="true" class="tipe"> <label for="jantung">Penderita penyakit jantung</label><br>
+                <input type="checkbox" name="a6" id="diabetes" value="true" class="tipe"> <label for="diabetes">Penderita diabetes</label><br>
+                <input type="checkbox" name="a6" id="cancer" value="true" class="tipe"> <label for="cancer">Penderita kanker</label><br>
+                <input type="checkbox" name="a6" id="obesitas" value="true" class="tipe"> <label for="obesitas">Obesitas</label><br>
+                <input type="checkbox" name="a6" id="perokok" value="true" class="tipe"> <label for="perokok">Perokok (atau mantan perokok)</label><br>
+                <input type="checkbox" name="a6" id="hamil" value="true" class="tipe"> <label for="hamil">Ibu hamil</label><br>
+                <input type="checkbox" name="a6" id="mhc" value="true" class="tipe"> <label for="mhc">Kondisi kesehatan mental</label><br>
+                <input type="checkbox" name="a6" id="pernapasan" value="true" class="tipe"> <label for="pernapasan">Penderita penyakit pernapasan</label><br>
+                <input type="checkbox" name="a6" id="kronis" value="true" class="tipe"> <label for="kronis">Penderita penyakit kronis</label><br>
+            </div>
+
+            <div id="a7-con" hidden>
+                <select name="provinsi-selector" id="prov-slec">
+				    <option value="Aceh">Aceh</option>
+                    <option value="Bali">Bali</option>
+                    <option value="Bangka Belitung">Bangka Belitung</option>
+                    <option value="Banten">Banten</option>
+                    <option value="Bengkulu">Bengkulu</option>
+                    <option value="DKI Jakarta">DKI Jakarta</option>
+                    <option value="Daerah Istimewa Yogyakarta">Daerah Istimewa Yogyakarta</option>
+                    <option value="Gorontalo">Gorontalo</option>
+                    <option value="Jambi">Jambi</option>
+                    <option value="Jawa Barat">Jawa Barat</option>
+                    <option value="Jawa Tengah">Jawa Tengah</option>
+                    <option value="Jawa Timur">Jawa Timur</option>
+                    <option value="Kalimantan Barat">Kalimantan Barat</option>
+                    <option value="Kalimantan Selatan">Kalimantan Selatan</option>
+                    <option value="Kalimantan Tengah">Kalimantan Tengah</option>
+                    <option value="Kalimantan Timur">Kalimantan Timur</option>
+                    <option value="Kalimantan Utara">Kalimantan Utara</option>
+                    <option value="Kepulauan Riau">Kepulauan Riau</option>
+                    <option value="Lampung">Lampung</option>
+                    <option value="Maluku">Maluku</option>
+                    <option value="Maluku Utara">Maluku Utara</option>
+                    <option value="Nusa Tenggara Barat">Nusa Tenggara Barat</option>
+                    <option value="Nusa Tenggara Timur">Nusa Tenggara Timur</option>
+                    <option value="Papua">Papua</option>
+                    <option value="Papua Barat">Papua Barat</option>
+                    <option value="Riau">Riau</option>
+                    <option value="Sulawesi Barat">Sulawesi Barat</option>
+                    <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+                    <option value="Sulawesi Tengah">Sulawesi Tengah</option>
+                    <option value="Sulawesi Tenggara">Sulawesi Tenggara</option>
+                    <option value="Sulawesi Utara">Sulawesi Utara</option>
+                    <option value="Sumatera Barat">Sumatera Barat</option>
+                    <option value="Sumatera Selatan">Sumatera Selatan</option>
+                    <option value="Sumatera Utara">Sumatera Utara</option>
+                </select>
+            </div>
+        </div>
+        <div id="question-navigator">
+            <button class="back" id="back-q" hidden>Sebelumnya</button>
+            <button class="next" id="next-q">Mulai</button>
+        </div>
+        <div hidden>
+            <form action="POST">
+                {% csrf_token %}
+                {{form.as_p}}
+            </form>
+        </div>
+    </div>
+    <script src = "{% static 'quizApp.js' %}"></script>
+</body>
+</html>
