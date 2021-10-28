@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,8 +7,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hasil Assessment</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="nav-bar"><h1>Navbar</h1></div>
+    <div class="container">
+        <div>
+            <h1 id="hasil-test"></h1>
+        </div>
+        <div>
+            <p  id="flav"></p>
+        </div>
+        <div>
+            <a href="">
+                <button></button>
+            </a>
+        </div>
+    </div>
+
+    <script src = "{% static 'assessmentApp.js' %}"></script>
 </body>
 </html>
