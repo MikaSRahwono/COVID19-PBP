@@ -1,0 +1,22 @@
+{% extends "navbar.html" %}
+{% block content %}
+
+<h1>Log In</h1><br>
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <button type="submit">Log In</button>
+</form>
+
+<br>
+
+{% if messages %}
+<div style="text-align: center; color: red">
+    <h5>[ Login Failed ]</h5>
+    {% for message in messages %}
+    <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+    {% endfor %}
+</div>
+{% endif %}
+
+{% endblock %}
