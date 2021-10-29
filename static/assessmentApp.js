@@ -7,19 +7,27 @@ $(document).ready( () =>{
       
     const nama = getCookieValue('nama');
     const isCov = getCookieValue('isCovid');
+
     console.log(isCov)
     console.log(nama)
 
     if(isCov === "true"){
-        $("#hasil-test").text("Anda memiliki gejala-gejala COVID");
+        $("#hasil-test").text(`Mohon maaf ${nama} anda termasuk individu yang rawan COVID`);
         $("#flav").text("Kami merekomendasikan anda untuk segera melakukan test. Klik tombol dibawah ini untuk mendapakan informasi selengkapnya")
         $('a').attr("href", "http://www.google.com/")
-        $('button').text("Dapatkan lokasi swab");
-        return
+        $('button').text("Dapatkan info lokasi test swab");
     }
-    $("#hasil-test").text("Anda bebas dari covid");
-    $("#flav").text("Klik tombol dibawah ini untuk mendapakan informasi mengenai covid.")
-    $('a').attr("href", "http://www.facebook.com/")
-    $('button').text("Lanjut");
-    return
+    else{
+        $("#hasil-test").text(`Selamat ${nama}!\nAnda bebas dari covid`);
+        $("#flav").text("Klik tombol dibawah ini untuk mendapakan informasi mengenai covid.")
+        $('a').attr("href", "http://www.facebook.com/")
+        $('button').text("Lanjut");
+    }
+    
+    $("#con-hasil").slideDown(1000, () =>{
+        $("#con-flav").slideDown(1000, () => {
+            $("#con-btn").slideDown(1000)
+        })
+    });
+    console.log(nama)
 })

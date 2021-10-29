@@ -12,21 +12,19 @@
 </head>
 
 <body class="bg-gray-800 flex flex-col h-screen">
-    <div class="nav-bar"><h1>Navbar</h1></div>
-    <div class="container">
-        <div>
-            <h1 id="hasil-test"></h1>
+    <div class="container m-auto">
+        <div id="con-hasil" class="m-3" hidden>
+            <h1 id="hasil-test" class="font-serif text-5xl xl:text-7xl text-gray-50"></h1>
         </div>
-        <div>
-            <p  id="flav"></p>
+        <div id="con-flav" class="m-3" hidden>
+            <p  id="flav" class="text-xl xl:text-3xl text-white"></p>
         </div>
-        <div>
+        <div id="con-btn" class="mt-9 mx-3" hidden>
             <a href="">
-                <button></button>
+                <button class="next rounded p-2 border-2 border-blue-50 text-blue-50 font-sans text-xl xl:text-3xl w-full lg:w-auto hover:bg-green-300 hover:text-gray-800 transition ease-linear"></button>
             </a>
         </div>
     </div>
-
     <script src = "{% static 'assessmentApp.js' %}"></script>
 </body>
 </html>
