@@ -22,11 +22,14 @@ $(document).ready( () =>{
             if ($("#nama").val().length === 0) {
                 alert("Harap isi nama anda");
                 return
-            }            
-            $("#a0-con").fadeOut();
-            $("#question-navigator").fadeOut(300, () =>{
-                $("#next-q").text("Selanjutnya");
-            })
+            }       
+            $("#q").fadeOut(300);     
+            $("#a0-con").fadeOut(300, () => {
+                $("#question-navigator").fadeOut(300, () =>{
+                    $("#next-q").text("Selanjutnya");
+                })
+            });
+            
         }
         
         pertanyaanCounter++;
@@ -44,22 +47,22 @@ $(document).ready( () =>{
             }
         }
     
-        $("#question-navigator").fadeOut(100, () =>{
+        $("#question-navigator").fadeOut(300, () =>{
             if(pertanyaanCounter > 1) $("#back-q").show();
             // hide yg sebelumnya
             if(pertanyaanCounter === 1){
-                $("#question").fadeOut(300, () => {
+                $("#q").fadeOut(300, () => {
                     $("#question").text(listPertanyaan[0]);
-                    $("#question").fadeIn(300);
+                    $("#q").fadeIn(300);
                     $("#a" + pertanyaanCounter + "-con").fadeIn(300);
                     $("#question-navigator").fadeIn(300);
                 });
                 return;
             }
-            $("#question").fadeOut(300);
+            $("#q").fadeOut(300);
             $("#a" + (pertanyaanCounter - 1) + "-con").fadeOut(300, () => {
                 $("#question").text(listPertanyaan[pertanyaanCounter-1]);
-                $("#question").fadeIn(300);
+                $("#q").fadeIn(300);
                 $("#a" + pertanyaanCounter + "-con").fadeIn(300);
                 $("#question-navigator").fadeIn(300);   
             });
@@ -71,13 +74,13 @@ $(document).ready( () =>{
         pertanyaanCounter--;
         
     
-        $("#question-navigator").fadeOut(100, () =>{
+        $("#question-navigator").fadeOut(300, () =>{
             if(pertanyaanCounter <= 1) $("#back-q").hide();
             // hide yg setelahnya
-            $("#question").fadeOut(300);
+            $("#q").fadeOut(300);
             $("#a" + (pertanyaanCounter + 1) + "-con").fadeOut(300, () => {
                 $("#question").text(listPertanyaan[pertanyaanCounter-1]);
-                $("#question").fadeIn(300);
+                $("#q").fadeIn(300);
                 $("#a" + pertanyaanCounter + "-con").fadeIn(300);
                 $("#question-navigator").fadeIn(300);
             })
@@ -111,9 +114,10 @@ $(document).ready( () =>{
 
         document.cookie = `isCovid=${isCovid}`
         document.cookie = `nama=${nama}`
+        document.cookie = `prov=${lokasi}`
 
         kirim(nama, lokasi, isCovid);
-        window.location.replace("http://127.0.0.1:8000/quiz/hasil");
+        window.location.replace("./hasil");
     }
 
     function kirim(nama, prov, covidBool){
