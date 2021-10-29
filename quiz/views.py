@@ -17,11 +17,12 @@ def index(request):
             data['status'] = "ok"
             print("okoklh")
             return JsonResponse(data)
-        
-        
-
+    
     context = {
         'form' : form,
     }
 
     return render(request, 'index_quiz.html', context)
+
+def hasil(request):
+    return render(request, 'hasil_quiz.html')

@@ -109,13 +109,11 @@ $(document).ready( () =>{
             isCovid = true;
         }
 
+        document.cookie = `isCovid=${isCovid}`
+        document.cookie = `nama=${nama}`
+
         kirim(nama, lokasi, isCovid);
-        
-        if(isCovid){
-            // redirect ke covid
-            return
-        }
-        // redirect ke ga covid
+        window.location.replace("http://127.0.0.1:8000/quiz/hasil");
     }
 
     function kirim(nama, prov, covidBool){
