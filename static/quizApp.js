@@ -1,8 +1,16 @@
 console.log('masuk')
 $(document).ready( () =>{
+
+    $("#q").slideDown(1000, () => {
+        $("#nama").slideDown(1000, () => {
+            $("#next-q").slideDown(1000);
+        });
+    });
+    
+
     let listPertanyaan = [
         "Apakah indera penciuman atau perasa anda pernah hilang?", 
-        "Apakah anda pernah kontak dengan orang yang terkonfirmasi kasus covid?",
+        "Apakah anda pernah kontak dengan orang yang terkonfirmasi kasus COVID?",
         "Apakah anda pernah mengalami gejala dibawah ini? (Bisa lebih dari satu)",
         "Apakah saturasi oksigen anda kurang dari 92%?",
         "Apakah anda pernah mengalami sesak napas dalam beberapa hari terakhir?",
