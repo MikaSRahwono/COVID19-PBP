@@ -1,4 +1,6 @@
 $(document).ready( () =>{
+    // diambil dari 
+    // https://stackoverflow.com/a/25490531
     const getCookieValue = (name) => (
         document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || ''
       )
