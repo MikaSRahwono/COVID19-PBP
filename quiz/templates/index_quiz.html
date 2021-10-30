@@ -10,35 +10,36 @@
     <title>Assessment Quiz</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <!-- <link rel="stylesheet" type="text/javascript" href="{% static '\js\quiz_index.js' %}"> -->
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 
 </head>
-<body>
-    <div class="nav-bar"><h1>Navbar</h1></div>
-    <div class="container">
-        <div class="question-container" id="q">
-            <p id="question">Halo, Masukan nama anda dibawah ini</p>
+<body class="bg-gray-800 flex flex-col h-screen">
+    <div class="container m-auto p-4">
+        <div id="q" class="question-container m-3" hidden>
+            <p class="font-serif text-white font-serif text-xl">Quiz Assessment</p>
+            <p id="question" class="font-serif text-5xl xl:text-7xl text-gray-50">Halo, silahkan masukan nama anda dibawah ini</p>
         </div>
-        <div class="answer-container" id="a">
+        <div class="answer-container m-5" id="a">
             <div id="a0-con">
-                <input type="text" id="nama">
+                <input type="text" id="nama" class="w-full border-4 border-green-300 rounded bg-gray-800 p-2 text-lg lg:p-4 lg:text-2xl text-white shadow-sm" hidden>
             </div>
-            <div id="a1-con" hidden> 
+            <div id="a1-con" hidden class="text-xl xl:text-3xl text-white"> 
                 <input type="radio" name="a1" id="yes1" value=6 class="jawab"> <label for="yes1">Ya</label> <br>
                 <input type="radio" name="a1" id="sebagian1" value=5 class="jawab"> <label for="sebagian1">Sebagian</label> <br>
                 <input type="radio" name="a1" id="no1" value=0 class="jawab"> <label for="no1">Tidak</label> 
             </div>
             
-            <div id="a2-con" hidden> 
+            <div id="a2-con" hidden class="text-xl xl:text-3xl text-white"> 
                 <input type="radio" name="a2" id="keluarga2" value=4 class="jawab"> <label for="keluarga2">Ya, dengan keluarga</label><br>
                 <input type="radio" name="a2" id="rekan2" value=1 class="jawab"> <label for="rekan2">Ya, dengan rekan kerja</label><br>
                 <input type="radio" name="a2" id="no2" value=0 class="jawab"> <label for="no2">Tidak</label>
             </div>
 
-            <div id="a3-con" hidden>
+            <div id="a3-con" hidden class="text-xl xl:text-3xl text-white">
                 <input type="checkbox" name="a3" id="deman" value=3 class="jawab"> <label for="demam">Demam</label><br>
                 <input type="checkbox" name="a3" id="weakness" value=3 class="jawab"> <label for="weakness">Lemah Lesu</label><br>
                 <input type="checkbox" name="a3" id="kelelahan" value=3 class="jawab"> <label for="kelelahan">Kelelahan</label><br>
-                <input type="checkbox" name="a3" id="hypoxia" value=3 class="jawab"> <label for="hypoxia">Sesak Napas</label><br>
+                <input type="checkbox" name="a3" id="hypoxia" value=3 class="jawab"> <label for="hypoxia">Penurunan Kadar Oksigen</label><br>
                 <input type="checkbox" name="a3" id="dizzy" value=3 class="jawab"> <label for="dizzy"></label>Pusing<br>
                 <input type="checkbox" name="a3" id="batuk" value=3 class="jawab"> <label for="batuk"></label>Batuk Kering<br>
                 <input type="checkbox" name="a3" id="st" value=3 class="jawab"> <label for="st">Sakit Tenggorokan</label><br>
@@ -59,18 +60,17 @@
                 <input type="checkbox" name="a3" id="ap" value=3 class="jawab"> <label for="ap">Sakit Perut</label><br>
             </div>
 
-            <div id="a4-con" hidden>
+            <div id="a4-con" hidden class="text-xl xl:text-3xl text-white">
                 <input type="radio" name="a4" id="yes4" value=5 class="jawab"> <label for="yes4">Ya</label> <br>
                 <input type="radio" name="a4" id="no4" value=0 class="jawab"> <label for="no4">Tidak</label> <br>
-                <input type="radio" name="a4" id="tidaktau4" value=0 class="jawab"> <label for="tidaktau4">Tidak Tahu</label> 
+                <input type="radio" name="a4" id="tidaktau4" value=0 class="jawab"> <label for="tidaktau4">Tidak tahu</label> 
             </div>
 
-            <div id="a5-con" hidden>
+            <div id="a5-con" hidden class="text-xl xl:text-3xl text-white">
                 <input type="radio" name="a5" id="yes5" value=5 class="jawab"> <label for="yes5">Ya</label> <br>
                 <input type="radio" name="a5" id="no5" value=0 class="jawab"> <label for="no5">Tidak</label> <br>
-                <input type="radio" name="a5" id="tidaktau5" value=0 class="jawab"> <label for="tidaktau5">Tidak Tahu</label> 
             </div>
-            <div id="a6-con" hidden>
+            <div id="a6-con" hidden class="text-xl xl:text-3xl text-white">
                 <input type="checkbox" name="a6" id="kesehatan" value="true" class="tipe"> <label for="kesehatan">Petugas kesehatan</label><br>
                 <input type="checkbox" name="a6" id="orang-tua" value="true" class="tipe"> <label for="orang-tua">Orang tua (diatas 65)</label><br>
                 <input type="checkbox" name="a6" id="anak" value="true" class="tipe"> <label for="anak">Anak-anak (dibawah 18)</label><br>
@@ -85,8 +85,8 @@
                 <input type="checkbox" name="a6" id="kronis" value="true" class="tipe"> <label for="kronis">Penderita penyakit kronis</label><br>
             </div>
 
-            <div id="a7-con" hidden>
-                <select name="provinsi-selector" id="prov-slec">
+            <div id="a7-con" class="text-xl xl:text-3xl text-white" hidden>
+                <select name="provinsi-selector" id="prov-slec" class="w-full border-4 border-green-300 rounded bg-gray-800 p-2 text-lg lg:p-4 lg:text-2xl text-white shadow-sm">
 				    <option value="Aceh">Aceh</option>
                     <option value="Bali">Bali</option>
                     <option value="Bangka Belitung">Bangka Belitung</option>
@@ -124,9 +124,13 @@
                 </select>
             </div>
         </div>
-        <div id="question-navigator">
-            <button class="back" id="back-q" hidden>Sebelumnya</button>
-            <button class="next" id="next-q">Mulai</button>
+        <div id="question-navigator" class="m-5 relative">
+            <div class="mb-3 lg:absolute lg:inset-y-0 right-0">
+                <button class="next rounded p-2 border-2 border-blue-50 text-blue-50 font-sans text-2xl w-full lg:w-auto hover:bg-green-300 hover:text-gray-800 transition ease-linear" id="next-q" hidden>Mulai</button>
+            </div>
+            <div class="lg:absolute lg:inset-y-0 left-0">
+                <button class="back rounded p-2 border-2 border-red-50 text-blue-50 font-sans text-2xl w-full lg:w-auto hover:bg-red-400 hover:text-gray-800 transition ease-linear" id="back-q" hidden>Sebelumnya</button>
+            </div>
         </div>
         <div hidden>
             <form action="POST">
@@ -135,6 +139,7 @@
             </form>
         </div>
     </div>
-    <script src = "{% static 'quizApp.js' %}"></script>
+    <!-- <script src= "quizApp.js"></script> -->
+    <script src= "{% static 'quizApp.js' %}"></script>
 </body>
 </html>
