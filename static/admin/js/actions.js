@@ -36,7 +36,14 @@
 
     function clearAcross(options) {
         reset(options);
+<<<<<<< HEAD
+        const acrossInputs = document.querySelectorAll(options.acrossInput);
+        acrossInputs.forEach(function(acrossInput) {
+            acrossInput.value = 0;
+        });
+=======
         document.querySelector(options.acrossInput).value = 0;
+>>>>>>> 7bbffd2795d9a0adef891c6d0ad565024df2cd4d
         document.querySelector(options.actionContainer).classList.remove(options.selectedClass);
     }
 
@@ -107,8 +114,15 @@
         document.querySelectorAll(options.acrossQuestions + " a").forEach(function(el) {
             el.addEventListener('click', function(event) {
                 event.preventDefault();
+<<<<<<< HEAD
+                const acrossInputs = document.querySelectorAll(options.acrossInput);
+                acrossInputs.forEach(function(acrossInput) {
+                    acrossInput.value = 1;
+                });
+=======
                 const acrossInput = document.querySelector(options.acrossInput);
                 acrossInput.value = 1;
+>>>>>>> 7bbffd2795d9a0adef891c6d0ad565024df2cd4d
                 showClear(options);
             });
         });

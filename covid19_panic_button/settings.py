@@ -29,6 +29,7 @@ DEBUG = not PRODUCTION
 
 HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME', '')
 
+
 ALLOWED_HOSTS = [f'{HEROKU_APP_NAME}.herokuapp.com']
 
 
@@ -45,7 +46,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
-    'quiz'
+    'quiz',
+    'data_covid',
 ]
 
 MIDDLEWARE = [

@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 import quiz.urls as quiz
+import data_covid.urls as data_covid
 from django.conf import settings
-
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
-    path('quiz/', include(quiz))
+    path('quiz/', include(quiz)),
+    path('data-covid', include(data_covid)),
 ]
