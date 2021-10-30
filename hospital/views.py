@@ -4,7 +4,7 @@ from django.shortcuts import render
 
 from hospital.forms import LocationForm
 from hospital.models import Location
-from .apis import get_hospital, get_location
+from .apis import get_details, get_hospital
 
 # Create your views here.
 
@@ -18,7 +18,8 @@ def index(request):
 
 def results(request):
     alamat = Location.objects.order_by('-id')[0]
-    data = get_hospital(alamat.location)
+    hosp_list = get_hospital(alamat.location)
+    data = get_details(hosp_list)
     response = {'hospitals':data}
     # return HttpResponse(business_list, content_type="application/json")
     return render(request, 'hospital_results.html', response)
@@ -28,7 +29,3 @@ def search_history(request):
     response = {'shistories':alamat}
     # return HttpResponse(business_list, content_type="application/json")
     return render(request, 'search_history.html', response)
-
-# def index(request):
-#     response = {'latlon':get_location}
-#     return render(request, 'test.html', response)

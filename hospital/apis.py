@@ -34,7 +34,6 @@ def get_location(alamat):
     else :
         return r.json()['results'][0]['geometry']['location']
 
-
 def get_hospital(alamat):
     loc = get_location(alamat)
     latlon = (loc['lat'], loc['lng'])
@@ -42,7 +41,7 @@ def get_hospital(alamat):
     location = latlon
     search_string = 'rumah sakit'
     distance = 5000
-    business_list = []
+    hospital_list = []
 
     hasil = map_client.places_nearby(
         location = location,
@@ -53,7 +52,7 @@ def get_hospital(alamat):
         type='hospital',
     )
 
-    business_list.extend(hasil.get('results'))
+    hospital_list.extend(hasil.get('results'))
     next_page_token = hasil.get('next_page_token')
 
     while next_page_token:
@@ -65,7 +64,26 @@ def get_hospital(alamat):
             radius=distance,
             page_token = next_page_token
         )
-        business_list.extend(hasil.get('results'))
+        hospital_list.extend(hasil.get('results'))
         next_page_token = hasil.get('next_page_token')
 
-    return business_list
+    return hospital_list
+
+def get_details(hospital_list):
+    detail_lists = []
+    for hospital in hospital_list:
+        if hospital['place_id']:
+            params = {'place_id':hospital['place_id']}
+            params['key'] = API_KEY
+            data_type = 'json'
+            endpoint = f"https://maps.googleapis.com/maps/api/place/details/{data_type}"
+            url_encode = urlencode(params)
+
+            url = f"{endpoint}?{url_encode}"
+
+            r = requests.get(url)
+            if r.status_code not in range (200, 299):
+                detail_lists.append()
+            else :
+                detail_lists.append(r.json()['result'])
+    return detail_lists
