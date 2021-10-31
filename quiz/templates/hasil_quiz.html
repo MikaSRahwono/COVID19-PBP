@@ -1,0 +1,30 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasil Assessment</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-gray-800 flex flex-col h-screen">
+    <div class="container m-auto">
+        <div id="con-hasil" class="m-3" hidden>
+            <h1 id="hasil-test" class="font-serif text-5xl xl:text-7xl text-gray-50"></h1>
+        </div>
+        <div id="con-flav" class="m-3" hidden>
+            <p  id="flav" class="text-xl xl:text-3xl text-white"></p>
+        </div>
+        <div id="con-btn" class="mt-9 mx-3" hidden>
+            <a href="">
+                <button class="next rounded p-2 border-2 border-blue-50 text-blue-50 font-sans text-xl xl:text-3xl w-full lg:w-auto hover:bg-green-300 hover:text-gray-800 transition ease-linear"></button>
+            </a>
+        </div>
+    </div>
+    <script src = "{% static 'assessmentApp.js' %}"></script>
+</body>
+</html>
