@@ -28,7 +28,10 @@ SECRET_KEY = 'django-insecure-#)&hs(jmcwv6vr(q%l(t0h1dpa*eexi^885+d72-nqq((3t=6)
 DEBUG = not PRODUCTION
 
 HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME', '')
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4b672a74bf2a4248ebe002c30bf4cc6fb1ca5bb5
 
 ALLOWED_HOSTS = [f'{HEROKU_APP_NAME}.herokuapp.com']
 
@@ -47,8 +50,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'home',
     'hospital',
+<<<<<<< HEAD
     'quiz',
     'data_covid',
+=======
+    'quiz'
+>>>>>>> 4b672a74bf2a4248ebe002c30bf4cc6fb1ca5bb5
 ]
 
 MIDDLEWARE = [
@@ -134,7 +141,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
-# STATIC_ROOT = os.path.join(BASE_DIR,  'staticfiles')
+# STATIC_ROOT = os.path.join(BASE_DIR,  'staticfiles')z
 
 # # Make sure the directories exist to prevent errors when doing collectstatic.
 # for directory in [*STATICFILES_DIRS, STATIC_ROOT]:

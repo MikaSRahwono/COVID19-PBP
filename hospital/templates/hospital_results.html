@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../static/hospital/css/results.css">
     <title>Document</title>
 </head>
-<body>
-    <h1>Daftar Rumah Sakit</h1>
-    <table>
-        <tr>
-            <th>Nama</th>
-        </tr>
-        {% if hospitals %}
-        {% for hospital in hospitals %}
-        <tr>
-            <td>{{hospital.name}}</td>
-        </tr>
+<body class="hospital-list_root">
+    <div class="center">
+        <h1>Daftar Rumah Sakit</h1>
+    </div>
+    <div class="hospital-list_cards">
+        {% if data %}
+        {% for hospital, photo in data %}
+        <div class="hospital-list_card">
+            <div class="center">
+                <img src="{{photo}}" alt="Foto Rumah Sakit" class="hospital-list_photo">
+            </div>
+            <div class="hospital-list_container">
+                <h3>{{hospital.name}}</h3>
+                <p>{{hospital.formatted_address}}</p>
+                <a href="{{hospital.url}}">View in Google Maps</a>
+            </div>
+        </div>
         {% endfor %}
         {% endif %}
         <!-- END SECTION -->
-    </table>
+    </div>
 </body>
 </html>
