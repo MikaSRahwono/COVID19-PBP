@@ -19,8 +19,9 @@ def index(request):
 def results(request):
     alamat = Location.objects.order_by('-id')[0]
     hosp_list = get_hospital(alamat.location)
-    data = get_details(hosp_list)
-    response = {'hospitals':data}
+    res = get_details(hosp_list)
+    data = zip(res[0], res[1])
+    response = {'data':data}
     # return HttpResponse(business_list, content_type="application/json")
     return render(request, 'hospital_results.html', response)
 

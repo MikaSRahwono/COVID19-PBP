@@ -71,19 +71,35 @@ def get_hospital(alamat):
 
 def get_details(hospital_list):
     detail_lists = []
+    photo_lists = []
     for hospital in hospital_list:
-        if hospital['place_id']:
-            params = {'place_id':hospital['place_id']}
-            params['key'] = API_KEY
-            data_type = 'json'
-            endpoint = f"https://maps.googleapis.com/maps/api/place/details/{data_type}"
-            url_encode = urlencode(params)
+        try:
+            if hospital['photos']:
+                # params for hospital
+                params = {'place_id':hospital['place_id']}
+                params['key'] = API_KEY
+                data_type = 'json'
+                endpoint = f"https://maps.googleapis.com/maps/api/place/details/{data_type}"
 
-            url = f"{endpoint}?{url_encode}"
+                url_encode = urlencode(params)
 
-            r = requests.get(url)
-            if r.status_code not in range (200, 299):
-                detail_lists.append()
-            else :
-                detail_lists.append(r.json()['result'])
-    return detail_lists
+                url = f"{endpoint}?{url_encode}"
+
+                r = requests.get(url)
+                z = r.json()['result']['photos'][1]['photo_reference']
+
+                # params for photo
+                params2 = {'maxwidth':320, 'maxheight':200}
+                params2['photo_reference'] = z
+                params2['key'] = API_KEY
+                url_encode2 = urlencode(params2)
+                endpoint_photo = f"https://maps.googleapis.com/maps/api/place/photo?{url_encode2}"
+                if r.status_code not in range (200, 299):
+                    detail_lists.append()
+                    photo_lists.append()
+                else :
+                    detail_lists.append(r.json()['result'])
+                    photo_lists.append(endpoint_photo)
+        except:
+            continue
+    return detail_lists, photo_lists

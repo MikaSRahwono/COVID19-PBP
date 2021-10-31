@@ -5,22 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../static/hospital/css/results.css">
-
     <title>Document</title>
 </head>
 <body class="hospital-list_root">
-    <h1>Daftar Rumah Sakit</h1>
+    <div class="center">
+        <h1>Daftar Rumah Sakit</h1>
+    </div>
     <div class="hospital-list_cards">
-        {% if hospitals %}
-        {% for hospital in hospitals %}
-        {% if hospital.photos %}
+        {% if data %}
+        {% for hospital, photo in data %}
         <div class="hospital-list_card">
+            <div class="center">
+                <img src="{{photo}}" alt="Foto Rumah Sakit" class="hospital-list_photo">
+            </div>
             <div class="hospital-list_container">
-                <h4>{{hospital.name}}</h4>
-                <a href="https://www.google.com/maps/place/?q=place_id:{{hospital.place_id}}">View in Google Maps</a>
+                <h3>{{hospital.name}}</h3>
+                <p>{{hospital.formatted_address}}</p>
+                <a href="{{hospital.url}}">View in Google Maps</a>
             </div>
         </div>
-        {% endif %}
         {% endfor %}
         {% endif %}
         <!-- END SECTION -->
