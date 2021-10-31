@@ -24,5 +24,5 @@ urlpatterns = [
     path('', include('home.urls')),
     path('hospital/', include('hospital.urls')),
     path('quiz/', include(quiz)),
-    path('data-covid', include(data_covid))
+    path('data-covid/', include(data_covid))
 ]
