@@ -3,7 +3,8 @@ from requests.api import request
 import googlemaps, time
 import requests
 from urllib.parse import urlencode
-API_KEY = os.getenv('API_KEY')
+# API_KEY = os.getenv('API_KEY')
+API_KEY = 'AIzaSyBWPRHpD6NyeA6De7h-luDykavzpMmCt4Q'
 
 # def get_client_ip(request):
 #     x_forwarded_for = request.META.get('HTTP_X_FORWARDED_FOR')
