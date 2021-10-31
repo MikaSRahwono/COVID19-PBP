@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: block;
+    background-color: #eaeaea;
+}
+
+.content-wilayah,
+.content-provinsi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #eaeaea;
+}
+
+.content-wilayah.no-detect {
+    visibility: hidden;
+    margin-top: 5vh;
+    max-height: 10vh;
+    position: relative;
+    background: #eaeaea;
+}
+
+.content-wilayah.no-detect:after {
+    visibility: visible;
+    content: "Yah provinsimu yang kamu daftarkan tidak terdeteksi :(\ATapi kamu masih bisa mencari provinsimu di bawah :D";
+    text-align: center;
+    white-space: pre-wrap;
+    color: #7c7c7c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.content-provinsi.loading {
+    max-height: 20vh;
+}
+
+h1,
+h4 {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+h4 {
+    font-size: 120%;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+}
+
+.card.text-white.bg-warning.mb-3 {
+    margin: 1em;
+    width: 25vw;
+    border-radius: 10px;
+}
+.card.text-white.bg-success.mb-3 {
+    margin: 1em;
+    width: 25vw;
+    border-radius: 10px;
+}
+.card.text-white.bg-danger.mb-3 {
+    margin: 1em;
+    width: 25vw;
+    border-radius: 10px;
+}
+
+p,
+h5,
+a {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+p {
+    font-size: 0.9em;
+}
+h5 {
+    font-size: 2em;
+}
+
+/* css buat bagian searc bar */
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 0.5em;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    border: none;
+    outline: none;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #7c7c7c6b;
+}
+
+input.search-bar {
+    border: none;
+    padding: 0.4em 1em;
+    outline: none;
+    border-radius: 26px;
+    background-color: #7c7c7c2b;
+    color: black;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(50% - 100px);
+}
+
+.provinsi.loading {
+    visibility: hidden;
+    max-height: 10px;
+    position: relative;
+}
+
+.provinsi.loading:after {
+    visibility: visible;
+    /* content: "Cari provinsi di search box... "; */
+    color: #7c7c7c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* content indonesia */
+.content-indonesia,
+.content-global {
+    display: flex;
+    align-items: center;
+    height: 70vh;
+    background-color: #fff;
+}
+
+.cards-indonesia {
+    display: block;
+}
+
+.centered-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    max-width: 50vw;
+}
+
+.text-indo {
+    position: relative;
+    text-align: center;
+    width: 50vw;
+}
+
+.text-indo h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+.svg-indo {
+    width: 60%;
+    z-index: 0;
+}
+
+.svg-globe {
+    width: 40%;
+    z-index: 0;
+}
+
+/* end of all covid content */
+
+/* overlay */
+#overlay {
+    position: fixed;
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+#overlay-link {
+    padding: 10px 0;
+    text-align: center;
+    background-color: white;
+}
+
+#overlay-link a {
+    color: grey;
+    font-size: 12px;
+}
+
+#overlay-link a:hover {
+    color: #3366bb;
+}
+
+.overlay-content {
+    width: 500px;
+    height: 300px;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.overlay-content h1 {
+    padding-top: 7vh;
+}
+
+.overlay-content h4 {
+    margin: 2vh 0 0 0;
+}
+
+.btn-section {
+    display: flex;
+    justify-content: center;
+}
+
+.overlay-btn {
+    margin-top: 5vh;
+    border: 1px solid white;
+    color: white;
+}
+
+.overlay-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
+    color: white;
+}

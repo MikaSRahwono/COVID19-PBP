@@ -22,13 +22,20 @@ PRODUCTION = os.environ.get('DATABASE_URL') != None
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#)&hs(jmcwv6vr(q%l(t0h1dpa*eexi^885+d72-nqq((3t=6)'
+# SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = "django-insecure-#)&hs(jmcwv6vr(q%l(t0h1dpa*eexi^885+d72-nqq((3t=6)"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = ['covid19-panic-button.herokuapp.com','127.0.0.1']
+DEBUG = not PRODUCTION
 
+HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME', '')
+
+ALLOWED_HOSTS = [f'{HEROKU_APP_NAME}.herokuapp.com']
+
+
+if not PRODUCTION:
+    ALLOWED_HOSTS += ['.localhost', '127.0.0.1', '[::1]']
 
 # Application definition
 
@@ -40,11 +47,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'hospital',
+    'quiz',
+    'data_covid',
     'motivasi'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -122,9 +133,17 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR,  'static')
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+STATIC_ROOT = os.path.join(BASE_DIR,  'staticfiles')
+
+# # Make sure the directories exist to prevent errors when doing collectstatic.
+# for directory in [*STATICFILES_DIRS, STATIC_ROOT]:
+#     directory.mkdir(exist_ok=True)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'

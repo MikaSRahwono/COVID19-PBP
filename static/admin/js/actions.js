@@ -36,10 +36,20 @@
 
     function clearAcross(options) {
         reset(options);
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5699a6a55a6460cb14c14e21efef9d691f9f499e
         const acrossInputs = document.querySelectorAll(options.acrossInput);
         acrossInputs.forEach(function(acrossInput) {
             acrossInput.value = 0;
         });
+<<<<<<< HEAD
+=======
+=======
+        document.querySelector(options.acrossInput).value = 0;
+>>>>>>> 7bbffd2795d9a0adef891c6d0ad565024df2cd4d
+>>>>>>> 5699a6a55a6460cb14c14e21efef9d691f9f499e
         document.querySelector(options.actionContainer).classList.remove(options.selectedClass);
     }
 
@@ -110,10 +120,21 @@
         document.querySelectorAll(options.acrossQuestions + " a").forEach(function(el) {
             el.addEventListener('click', function(event) {
                 event.preventDefault();
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 5699a6a55a6460cb14c14e21efef9d691f9f499e
                 const acrossInputs = document.querySelectorAll(options.acrossInput);
                 acrossInputs.forEach(function(acrossInput) {
                     acrossInput.value = 1;
                 });
+<<<<<<< HEAD
+=======
+=======
+                const acrossInput = document.querySelector(options.acrossInput);
+                acrossInput.value = 1;
+>>>>>>> 7bbffd2795d9a0adef891c6d0ad565024df2cd4d
+>>>>>>> 5699a6a55a6460cb14c14e21efef9d691f9f499e
                 showClear(options);
             });
         });
