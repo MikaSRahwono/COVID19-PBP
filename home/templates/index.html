@@ -1,12 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Covid19 Panic Button Project</title>
-</head>
-<body>
-    <h1>Covid19 Panic Button Project</h1>
-</body>
-</html>
+{% extends "navbar.html" %}
+{% block content %}
+
+<h1>!!! COVID-19 PANIC BUTTON !!!</h1>
+<a href="./quiz">
+<img src="https://static.wikia.nocookie.net/among-us-wiki/images/8/87/Emergency_button.png/revision/latest/top-crop/width/360/height/360?cb=20201029203416" style="margin-top: 25px; margin-bottom: 25px"/>
+</a>
+<h2>Tekan tombol diatas untuk melanjutkan</h2>
+
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <br><br>
+    <p id="greeting-message" {% if message.tags %} class="{{ message.tags }}"{% endif %}>Welcome back, {{ message }}!</p>
+    {% endfor %}
+</ul>
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,29 @@
+.history-table_table {
+  border-collapse: collapse;
+  width: 90%;
+}
+
+.history-table_table th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #f07c68;
+  color: white;
+}
+
+.history-table_table td,
+.history-table_table th {
+  border: 1px solid #f0c6b7;
+  padding: 8px;
+}
+
+.history-table_root {
+  background-color: #fbead9;
+  margin: 0;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
