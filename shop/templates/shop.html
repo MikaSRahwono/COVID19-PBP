@@ -1,0 +1,20 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Dapati barang yang Anda perlukan di sini</h1>
+<form id="pilihan" action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type='submit' value='Submit'/>
+</form>
+<div>
+    {% for b in barang %}
+    <img src = {{ b.gambar }} />
+          <a href={{ b.link }} target="_blank" rel="noreferrer">{{ b.link }}</a>
+      {% endfor %}
+</div>
+</body>
+</html>
