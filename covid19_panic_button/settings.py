@@ -22,13 +22,14 @@ PRODUCTION = os.environ.get('DATABASE_URL') != None
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-#)&hs(jmcwv6vr(q%l(t0h1dpa*eexi^885+d72-nqq((3t=6)'
+# SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = "django-insecure-#)&hs(jmcwv6vr(q%l(t0h1dpa*eexi^885+d72-nqq((3t=6)"
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = not PRODUCTION
 
 HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME', '')
-
 
 ALLOWED_HOSTS = [f'{HEROKU_APP_NAME}.herokuapp.com']
 
@@ -46,12 +47,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'hospital',
     'quiz',
     'data_covid',
+    'motivasi'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
