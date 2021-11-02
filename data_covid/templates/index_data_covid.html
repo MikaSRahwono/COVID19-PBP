@@ -6,71 +6,108 @@
     integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
     crossorigin="anonymous"
 />
-<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" />
-<script src="{% static 'js/main.js' %}" defer></script>
+<link
+    rel="stylesheet"
+    href="{% static 'css/data_covid.css' %}"
+    type="text/css"
+/>
+
 {% endblock head %} {% block content %}
 
 <body>
+    <!-- sementara kyk gini  -->
     <!-- start of content wilayahmu -->
     <div class="content-wilayah no-detect">
-        <div class="center-content-provinsi">
-            <h4 class="h2-wilayah">
-                Saat ini kamu terdeteksi di provinsi
-                <b>DKI Jakarta</b>
-            </h4>
-            <h1 class="h1-wilayah">Kasus di Provinsimu adalah</h1>
-            <div class="cards">
-                <!-- card positif -->
-                <div
-                    class="card text-white bg-warning mb-3"
-                    style="max-width: 25vw"
-                >
-                    <div class="card-body">
-                        <p class="card-text">Total Positif</p>
-                        <h5 class="card-title positif" style="margin: 0">
-                            <b>-</b>
-                        </h5>
-                        <p class="card-text">Orang</p>
-                    </div>
-                </div>
-                <!-- card sembuh -->
-                <div
-                    class="card text-white bg-success mb-3"
-                    style="max-width: 25vw"
-                >
-                    <div class="card-body">
-                        <p class="card-text">Total Sembuh</p>
-                        <h5
-                            class="card-title sembuh"
-                            style="margin: 0"
-                            data-target="0"
+        <h4 class="h4-wilayah">
+            Saat ini kamu terdeteksi di provinsi
+            <span class="mySpan">DKI Jakarta</span>
+        </h4>
+        <div class="outter-content">
+            <div class="first-outter">
+                <div class="center-content-provinsi">
+                    <h1 class="h1-wilayah">Kasus di Provinsimu adalah</h1>
+                    <div class="cards">
+                        <!-- card positif -->
+                        <div
+                            class="card text-white bg-warning mb-3"
+                            style="max-width: 25vw"
                         >
-                            <b>-</b>
-                        </h5>
-                        <p class="card-text">Orang</p>
-                    </div>
-                </div>
-                <!-- card meninggal -->
-                <div
-                    class="card text-white bg-danger mb-3"
-                    style="max-width: 25vw"
-                >
-                    <div class="card-body">
-                        <p class="card-text">Total Meninggal</p>
-                        <h5
-                            class="card-title meninggal"
-                            style="margin: 0"
-                            data-target="0"
+                            <div class="card-body">
+                                <p class="card-text">Total Positif</p>
+                                <h5
+                                    class="card-title positif-wilayah"
+                                    style="margin: 0"
+                                >
+                                    <b>-</b>
+                                </h5>
+                                <p class="card-text">Orang</p>
+                            </div>
+                        </div>
+                        <!-- card sembuh -->
+                        <div
+                            class="card text-white bg-success mb-3"
+                            style="max-width: 25vw"
                         >
-                            <b>-</b>
-                        </h5>
-                        <p class="card-text">Orang</p>
+                            <div class="card-body">
+                                <p class="card-text">Total Sembuh</p>
+                                <h5
+                                    class="card-title sembuh-wilayah"
+                                    style="margin: 0"
+                                    data-target="0"
+                                >
+                                    <b>-</b>
+                                </h5>
+                                <p class="card-text">Orang</p>
+                            </div>
+                        </div>
+                        <!-- card meninggal -->
+                        <div
+                            class="card text-white bg-danger mb-3"
+                            style="max-width: 25vw"
+                        >
+                            <div class="card-body">
+                                <p class="card-text">Total Meninggal</p>
+                                <h5
+                                    class="card-title meninggal-wilayah"
+                                    style="margin: 0"
+                                    data-target="0"
+                                >
+                                    <b>-</b>
+                                </h5>
+                                <p class="card-text">Orang</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="last-update wilayah">Last Update: 202020</p>
+
+                    <!-- end of cards -->
+                </div>
+            </div>
+            <div class="prediksi-cuaca">
+                <div class="card">
+                    <div class="weather loading">
+                        <h4 class="city">Prediksi Cuaca Jakarta</h4>
+                        <p class="jam-paragraf">dalam -+ 3 Jam</p>
+                        <h2 class="temp">51°C</h2>
+                        <div class="flex">
+                            <!-- <img
+                                src="https://openweathermap.org/img/wn/50n.png"
+                                alt=""
+                                class="icon"
+                            /> -->
+                            <div class="description">Cloudy</div>
+                        </div>
+
+                        <h6>Himbuauan</h6>
+                        <p class="isi-saran">Ini isi dari sarannya</p>
+                        <p>Sumber: BMKG</p>
                     </div>
                 </div>
             </div>
-            <!-- end of cards -->
         </div>
+        <!-- end of outter-content -->
     </div>
+    <!-- end of content-wilayahmu -->
     <!-- end of content-wilayahmu -->
 
     <!-- start of content provinsi -->
@@ -144,6 +181,7 @@
                         </div>
                     </div>
                 </div>
+                <p class="last-update provinsi">Last Update: 202020</p>
             </div>
             <!-- end of cards -->
         </div>
@@ -158,7 +196,7 @@
                 alt=""
                 class="svg-indo"
             />
-            <h1><b> Data Covid Indonesia </b></h1>
+            <h1>Data Covid Indonesia</h1>
         </div>
         <div class="centered-cards">
             <div class="cards-indonesia">
@@ -263,7 +301,7 @@
                 alt=""
                 class="svg-globe"
             />
-            <h1><b> Data Covid Global </b></h1>
+            <h1>Data Covid Global</h1>
         </div>
     </div>
     <!-- end of all covid content -->
@@ -281,14 +319,36 @@
                     >https://api.quarantine.country/api/v1/summary/latest</a
                 >
                 <h4>Indonesia Province COVID API:</h4>
-                <a href="https://bit.ly/API-Covid-Provinsi"
-                    >https://bit.ly/API-Covid-Provinsi</a
+                <a
+                    href="https://apicovid19indonesia-v2.vercel.app/api/indonesia/provinsi/more"
+                    >https://apicovid19indonesia-v2.vercel.app/api/indonesia/provinsi/more</a
+                >
+                <h4>Weather Prediction BMKG API:</h4>
+                <a href="https://data.bmkg.go.id/prakiraan-cuaca/"
+                    >https://data.bmkg.go.id/prakiraan-cuaca/</a
                 >
             </div>
             <div class="btn-section">
                 <button class="overlay-btn">&#215;</button>
             </div>
         </div>
+    </div>
+    <script src="{% static 'js/data_covid.js' %}" defer></script>
+    <div class="none">
+        <!-- <div onload="wilayah.fetchCorona({{i.prov}})"></div> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            $.getScript("{% static 'js/data_covid.js' %}", function () {
+                console.log("masoook");
+                callProvinsi("{{last_prov}}");
+            });
+
+            // function pickProv() {
+            //     var x = "{{last_prov}}";
+            //     console.log(x);
+            //     callProvinsi(x);
+            // }
+        </script>
     </div>
 </body>
 
