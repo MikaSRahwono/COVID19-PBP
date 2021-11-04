@@ -1,0 +1,412 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: block;
+    background-color: #181818;
+}
+
+.content-wilayah,
+.content-provinsi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 350px;
+    padding-top: 30px;
+    background-color: #181818;
+}
+
+.content-wilayah.no-detect {
+    visibility: hidden;
+    margin-top: 5vh;
+    max-height: 10vh;
+    position: relative;
+    background: #eaeaea;
+}
+
+.content-wilayah.no-detect:after {
+    visibility: visible;
+    /* content: "Yah provinsi yang kamu masukkan saat mengisi QUIZ, tidak terdeteksi :(\ATapi kamu masih bisa mencari provinsimu di bawah :D"; */
+    content: "Yah provinsi yang kamu masukkan saat mengisi QUIZ tidak terdeteksi :(\AIsi ulang QUIZ agar kamu dapat melihat Section ini :D";
+    text-align: center;
+    white-space: pre-wrap;
+    color: #7c7c7c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.first-outter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-wilayah {
+    margin-top: 10vh;
+    margin-bottom: 0;
+    display: block;
+}
+
+.h1-wilayah {
+    text-align: left;
+    padding-left: 20px;
+    font-size: 30px;
+}
+
+.h1-wilayah,
+.h4-wilayah,
+.h1-provinsi {
+    color: white;
+}
+.outter-content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+/* start of konten cuaca */
+.prediksi-cuaca {
+    min-width: 10vw;
+}
+.prediksi-cuaca .card {
+    /* background: #000000d0; */
+    background: rgba(255, 255, 255, 0.05);
+    /* background: #181818; */
+    color: white;
+    padding: 1em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 30vw;
+    max-height: 45vh;
+    margin: 1em;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.prediksi-cuaca h4 {
+    font-size: 20px;
+}
+
+.prediksi-cuaca h2 {
+    margin-bottom: -40px;
+    font-size: 35px;
+}
+
+.weather h6 {
+    margin-top: 5px;
+    text-align: left;
+}
+
+.prediksi-cuaca .flex {
+    display: flex;
+    align-items: center;
+    margin-top: -20px;
+}
+
+.prediksi-cuaca .description {
+    text-transform: capitalize;
+    font-size: 25px;
+    margin-left: 0px;
+    margin-top: 50px;
+    padding-top: 30px;
+    text-align: left;
+}
+
+#jam {
+    color: rgb(94, 93, 93);
+    margin-top: -9px;
+    text-align: end;
+}
+
+.prediksi-cuaca p {
+    color: rgb(94, 93, 93);
+    font-size: 12px;
+    text-align: end;
+}
+
+.prediksi-cuaca .isi-saran {
+    text-align: start;
+    margin-bottom: -10px;
+    color: rgb(201, 198, 198);
+}
+
+.prediksi-cuaca .flex {
+    background-repeat: no-repeat;
+    background-image: 150px;
+    background-position: right center;
+}
+
+.prediksi-cuaca img {
+    width: 100px;
+    z-index: -1;
+}
+
+h1,
+h4 {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+}
+
+h4 {
+    font-size: 120%;
+}
+
+span {
+    font-weight: 600;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+}
+
+.card.text-white.bg-warning.mb-3 {
+    margin: 1em;
+    width: 25vw;
+    border-radius: 10px;
+}
+.card.text-white.bg-success.mb-3 {
+    margin: 1em;
+    width: 25vw;
+    border-radius: 10px;
+}
+.card.text-white.bg-danger.mb-3 {
+    margin: 1em;
+    width: 25vw;
+    border-radius: 10px;
+}
+
+.content-wilayah .card.text-white.bg-warning.mb-3,
+.content-wilayah .card.text-white.bg-success.mb-3,
+.content-wilayah .card.text-white.bg-danger.mb-3 {
+    width: 15vw;
+}
+
+p,
+h5,
+a {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+}
+p {
+    font-size: 0.9em;
+}
+h5 {
+    font-size: 2em;
+}
+
+/* css buat bagian searc bar */
+.search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay button,
+.search button {
+    margin: 0.5em;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    border: none;
+    outline: none;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #7c7c7c6b;
+}
+
+input.search-bar {
+    border: none;
+    padding: 0.4em 1em;
+    outline: none;
+    border-radius: 26px;
+    background-color: #7c7c7c2b;
+    /* color: black; */
+    color: white;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(50% - 100px);
+}
+
+.content-provinsi.loading {
+    max-height: 20vh;
+}
+
+.provinsi.loading {
+    visibility: hidden;
+    max-height: 10px;
+    position: relative;
+}
+
+.provinsi.loading:after {
+    visibility: visible;
+    /* content: "Cari provinsi di search box... "; */
+    color: #7c7c7c;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.last-update {
+    color: grey;
+    padding-left: 18px;
+}
+
+.last-update.provinsi {
+    text-align: center;
+}
+
+/* content indonesia */
+.content-indonesia,
+.content-global {
+    display: flex;
+    align-items: center;
+    height: 70vh;
+    background-color: #f4f6fa;
+    /* background-color: #fff; */
+}
+
+.cards-indonesia {
+    display: block;
+}
+
+.centered-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    max-width: 50vw;
+}
+
+.text-indo {
+    position: relative;
+    text-align: center;
+    width: 50vw;
+}
+
+.text-indo h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+}
+
+.svg-indo {
+    width: 60%;
+    z-index: 0;
+}
+
+.svg-globe {
+    width: 40%;
+    z-index: 0;
+}
+
+/* end of all covid content */
+
+/* overlay */
+#overlay {
+    position: fixed;
+    display: none;
+
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+#text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
+
+#overlay-link {
+    padding: 10px 0;
+    text-align: center;
+    background-color: #f4f6fa;
+    /* background-color: white; */
+}
+
+#overlay-link a {
+    color: grey;
+    font-size: 12px;
+}
+
+#overlay-link a:hover {
+    color: #3366bb;
+}
+
+.overlay-content {
+    width: 35vw;
+    height: 55vh;
+    background-color: white;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.overlay-content h1 {
+    padding-top: 7vh;
+}
+
+.overlay-content h4 {
+    margin: 2vh 0 0 0;
+}
+
+.btn-section {
+    display: flex;
+    justify-content: center;
+}
+
+.overlay-btn {
+    margin-top: 5vh;
+    border: 1px solid white;
+    color: white;
+}
+
+.overlay-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border: 1px solid white;
+    color: white;
+}
+
+/* tambahin ini di file lokal kalian */
+.nav_links_custom #home-override a {
+    color: white;
+    font-weight: 200;
+    transition: all 0.3s ease 0s;
+}
+.nav_links_custom #home-override a:hover {
+    color: #828cf6;
+}
+.nav_links_custom .data-covid-menu a {
+    color: #828cf6;
+    font-weight: bold;
+    transition: all 0.3s ease 0s;
+}
+.nav_links_custom .data-covid-menu a:hover {
+    color: white;
+}

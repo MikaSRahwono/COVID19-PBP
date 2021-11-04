@@ -1,0 +1,165 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style>
+            #greeting-message {
+                font-size: 1.5em;
+                color: limegreen;
+            }
+        </style>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
+        {% block head %} {% endblock head %}
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+            * {
+                box-sizing: border-box;
+                margin: 0;
+                padding: 0;
+            }
+
+            .navbar li,
+            .navbar a,
+            .navbar button {
+                font-family: "Poppins", sans-serif;
+                font-weight: 500;
+                font-size: 16px;
+                text-decoration: none;
+                color: #f4f6fa;
+            }
+
+            header {
+                background: #181818;
+                position: fixed;
+                width: 100%;
+                top: 0;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                padding: 30px 5%;
+                height: 70px;
+                z-index: 5;
+            }
+            .logo {
+                cursor: pointer;
+                margin-right: auto;
+                width: 125px;
+            }
+
+            .nav_links_custom {
+                list-style: none;
+            }
+
+            .nav_links_custom li {
+                display: inline-block;
+                padding: 0 10px;
+            }
+
+            .nav_links_custom li a {
+                transition: all 0.3s ease 0s;
+            }
+
+            .nav_links_custom li a:hover {
+                color: #828cf6;
+            }
+
+            .cta-nav button {
+                padding: 4px 10px;
+                border: none;
+                cursor: pointer;
+                border-radius: 50px;
+                transition: all 0.3s ease 0s;
+            }
+
+            .cta-nav {
+                padding: 0 20px;
+            }
+
+            .cta-nav .cta.login button {
+                padding: 4px 20px;
+                padding-top: 3px;
+                background-color: #181818;
+                color: #828cf6;
+                border: 1px solid #828cf6;
+            }
+
+            .cta-nav .cta.register button {
+                padding-top: 3px;
+                color: black;
+                background-color: #828cf6;
+                border: 1px solid #828cf6;
+            }
+
+            .cta.login button:hover {
+                background-color: #828cf6;
+                color: white;
+            }
+            .cta.register button:hover {
+                background-color: #828cf6;
+                color: white;
+                border: 1px solid #828cf6;
+            }
+
+            ul {
+                margin-bottom: 0;
+            }
+            body {
+                margin-top: 70px;
+            }
+
+            .nav_links_custom .home-menu a {
+                color: #828cf6;
+                font-weight: bold;
+                transition: all 0.3s ease 0s;
+            }
+            .nav_links_custom .home-menu a:hover {
+                color: white;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <img src=" {% static 'images/logo.svg' %}" alt="" class="logo" />
+            <nav class="navbar">
+                <ul class="nav_links_custom">
+                    <li id="home-override" class="nav-item home-menu">
+                        <a class="" href="../">Home</a>
+                    </li>
+                    <li id="" class="nav-item data-covid-menu">
+                        <a class="" href="../data-covid">Data Covid</a>
+                    </li>
+                    <li id="" class="nav-item hospital-menu">
+                        <a class="" href="../hospital">Rumah Sakit</a>
+                    </li>
+                    <li id="" class="nav-item isoman-menu">
+                        <a class="" href="#">Perlengkapan Isoman</a>
+                    </li>
+                    <li id="" class="nav-item motivasi-menu">
+                        <a class="" href="../motivasi">Motivasi</a>
+                    </li>
+                    <li id="" class="nav-item things-menu">
+                        <a class="" href="#">Things to do</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="cta-nav">
+                <a href="../login" class="cta login"><button>Login</button></a>
+                <a href="../register" class="cta register"
+                    ><button>Register</button></a
+                >
+            </div>
+        </header>
+        {% block content %} {% endblock content %}
+    </body>
+</html>
