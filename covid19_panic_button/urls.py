@@ -24,5 +24,5 @@ urlpatterns = [
     path('quiz/', include('quiz.urls')),
     path('data-covid/', include('data_covid.urls')),
     path('motivasi/', include('motivasi.urls')),
-    path('shop', include('shop.urls')),
+    path('shop/', include('shop.urls')),
 ]
