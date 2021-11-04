@@ -5,6 +5,19 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <style>
+            #greeting-message {
+                font-size: 1.5em;
+                color: limegreen;
+            }
+        </style>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+            crossorigin="anonymous"
+        />
         {% block head %} {% endblock head %}
         <style>
             @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
@@ -33,7 +46,7 @@
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                padding: 30px 10%;
+                padding: 30px 5%;
                 height: 70px;
                 z-index: 5;
             }
@@ -121,7 +134,7 @@
             <nav class="navbar">
                 <ul class="nav_links_custom">
                     <li id="home-override" class="nav-item home-menu">
-                        <a class="" href="../home">Home</a>
+                        <a class="" href="../">Home</a>
                     </li>
                     <li id="" class="nav-item data-covid-menu">
                         <a class="" href="../data-covid">Data Covid</a>
@@ -133,7 +146,7 @@
                         <a class="" href="#">Perlengkapan Isoman</a>
                     </li>
                     <li id="" class="nav-item motivasi-menu">
-                        <a class="" href="#">Motivasi</a>
+                        <a class="" href="../motivasi">Motivasi</a>
                     </li>
                     <li id="" class="nav-item things-menu">
                         <a class="" href="#">Things to do</a>
