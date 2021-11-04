@@ -7,7 +7,7 @@
 
 body {
     display: block;
-    background-color: #eaeaea;
+    background-color: #181818;
 }
 
 .content-wilayah,
@@ -15,8 +15,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
-    background-color: #eaeaea;
+    height: 350px;
+    padding-top: 30px;
+    background-color: #181818;
 }
 
 .content-wilayah.no-detect {
@@ -57,6 +58,12 @@ body {
     padding-left: 20px;
     font-size: 30px;
 }
+
+.h1-wilayah,
+.h4-wilayah,
+.h1-provinsi {
+    color: white;
+}
 .outter-content {
     display: flex;
     justify-content: space-evenly;
@@ -67,7 +74,9 @@ body {
     min-width: 10vw;
 }
 .prediksi-cuaca .card {
-    background: #000000d0;
+    /* background: #000000d0; */
+    background: rgba(255, 255, 255, 0.05);
+    /* background: #181818; */
     color: white;
     padding: 1em;
     border-radius: 30px;
@@ -91,6 +100,7 @@ body {
 
 .weather h6 {
     margin-top: 5px;
+    text-align: left;
 }
 
 .prediksi-cuaca .flex {
@@ -198,7 +208,8 @@ h5 {
     align-items: center;
 }
 
-button {
+.overlay button,
+.search button {
     margin: 0.5em;
     border-radius: 50%;
     width: 44px;
@@ -221,7 +232,8 @@ input.search-bar {
     outline: none;
     border-radius: 26px;
     background-color: #7c7c7c2b;
-    color: black;
+    /* color: black; */
+    color: white;
     font-family: inherit;
     font-size: 105%;
     width: calc(50% - 100px);
@@ -262,7 +274,8 @@ input.search-bar {
     display: flex;
     align-items: center;
     height: 70vh;
-    background-color: #fff;
+    background-color: #f4f6fa;
+    /* background-color: #fff; */
 }
 
 .cards-indonesia {
@@ -334,7 +347,8 @@ input.search-bar {
 #overlay-link {
     padding: 10px 0;
     text-align: center;
-    background-color: white;
+    background-color: #f4f6fa;
+    /* background-color: white; */
 }
 
 #overlay-link a {
@@ -376,5 +390,23 @@ input.search-bar {
 .overlay-btn:hover {
     background-color: rgba(255, 255, 255, 0.3);
     border: 1px solid white;
+    color: white;
+}
+
+/* tambahin ini di file lokal kalian */
+.nav_links_custom #home-override a {
+    color: white;
+    font-weight: 200;
+    transition: all 0.3s ease 0s;
+}
+.nav_links_custom #home-override a:hover {
+    color: #828cf6;
+}
+.nav_links_custom .data-covid-menu a {
+    color: #828cf6;
+    font-weight: bold;
+    transition: all 0.3s ease 0s;
+}
+.nav_links_custom .data-covid-menu a:hover {
     color: white;
 }
