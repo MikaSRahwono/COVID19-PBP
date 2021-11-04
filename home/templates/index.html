@@ -1,19 +1,41 @@
-{% extends "navbar.html" %}
+{% extends "navbar-ecek-ecek.html" %} {% block head %} {% load static %}
+
+<style>
+    body {
+        text-align: center;
+        padding-top: 100px;
+    }
+    #greeting-message {
+        font-size: 1.5em;
+        color: limegreen;
+    }
+</style>
+
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"/>
+{% endblock %}
+
 {% block content %}
 
-<h1>!!! COVID-19 PANIC BUTTON !!!</h1>
-<a href="./quiz">
-<img src="https://static.wikia.nocookie.net/among-us-wiki/images/8/87/Emergency_button.png/revision/latest/top-crop/width/360/height/360?cb=20201029203416" style="margin-top: 25px; margin-bottom: 25px"/>
-</a>
-<h2>Tekan tombol diatas untuk melanjutkan</h2>
+<body style="text-align: center; padding-top: 100px">
 
-{% if messages %}
-<ul class="messages">
-    {% for message in messages %}
-    <br><br>
-    <p id="greeting-message" {% if message.tags %} class="{{ message.tags }}"{% endif %}>Welcome back, {{ message }}!</p>
-    {% endfor %}
-</ul>
-{% endif %}
+    <h1>!!! COVID-19 PANIC BUTTON !!!</h1>
+    <a href="./quiz">
+    <img src="https://static.wikia.nocookie.net/among-us-wiki/images/8/87/Emergency_button.png/revision/latest/top-crop/width/360/height/360?cb=20201029203416" style="margin-top: 25px; margin-bottom: 25px"/>
+    </a>
+    <h2>Tekan tombol diatas untuk melanjutkan</h2>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <br><br>
+        <p id="greeting-message" {% if message.tags %} class="{{ message.tags }}"{% endif %}>Welcome back, {{ message }}!</p>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+</body>
 
 {% endblock %}

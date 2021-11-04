@@ -1,6 +1,9 @@
-{% extends "navbar.html" %}
-{% block content %}
+{% extends "navbar-ecek-ecek.html" %} {% block head %} {% load static %}
 <style>
+body {
+    text-align: center;
+    padding-top: 100px;
+}
 #id_username, #id_password1, #id_password2 {
     width: 100%;
 }
@@ -10,37 +13,45 @@
     font-size: 0.8em
 }
 </style>
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"/>
+{% endblock %}
 
-<h1>Create An Account</h1><br><br>
-<form method="POST" style="margin-left: 40%; margin-right: 40%">
-    {% csrf_token %}
-    {% for field in form %}
-        <div class="fieldWrapper row">
-            {{ field.errors }}
-            <div class="col-6"><h5>{{ field.label_tag }}</h5></div>
-            <div class="col-6">{{ field }}</div>
-            <br>
+
+{% block content %}
+<body style="text-align: center; padding-top: 100px">
+    <h1>Create An Account</h1><br><br>
+    <form method="POST" style="margin-left: 40%; margin-right: 40%">
+        {% csrf_token %}
+        {% for field in form %}
+            <div class="fieldWrapper row">
+                {{ field.errors }}
+                <div class="col-6"><h5>{{ field.label_tag }}</h5></div>
+                <div class="col-6">{{ field }}</div>
+                <br>
+            </div>
+            <div class="fieldWrapper row">
+                {% if field.help_text %}
+                <div class="help">{{ field.help_text|safe }}</div>
+                {% endif %}
+            </div><br><br>
+        {% endfor %}
+        <div class="d-flex justify-content-center">
+            <input type="submit" value="Submit">
         </div>
-        <div class="fieldWrapper row">
-            {% if field.help_text %}
-            <div class="help">{{ field.help_text|safe }}</div>
-            {% endif %}
-        </div><br><br>
-    {% endfor %}
-    <div class="d-flex justify-content-center">
-        <input type="submit" value="Submit">
+    </form>
+
+    <br><br>
+
+    {% if messages %}
+    <div style="text-align: center; color: red">
+        <h5>[ Register Failed ]</h5>
+        {% for message in messages %}
+        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+        {% endfor %}
     </div>
-</form>
-
-<br><br>
-
-{% if messages %}
-<div style="text-align: center; color: red">
-    <h5>[ Register Failed ]</h5>
-    {% for message in messages %}
-    <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-    {% endfor %}
-</div>
-{% endif %}
-
+    {% endif %}
+</body>
 {% endblock %}
