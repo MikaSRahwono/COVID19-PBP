@@ -1,11 +1,12 @@
 {% load static %}
+
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
     <!--ADD HEADER-->
 
     <!-- Required meta tags -->
-
+    {% include "navbar-ecek-ecek.html" %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,6 +22,8 @@
   </head>
 
   <style>
+     .body {
+     }
     .nav_links_custom #home-override a {
     color: white;
     font-weight: 200;
@@ -29,12 +32,12 @@
     .nav_links_custom #home-override a:hover {
         color: #828cf6;
     }
-    .nav_links_custom .data-covid-menu a {
+    .nav_links_custom .things-menu a {
         color: #828cf6;
         font-weight: bold;
         transition: all 0.3s ease 0s;
     }
-    .nav_links_custom .data-covid-menu a:hover {
+    .nav_links_custom .things-menu a:hover {
         color: white;
     }
     .body {
@@ -43,11 +46,16 @@
   </style>
 
 
-  <body>
+  <body style="text-align: center; padding-top: 100px; background-color: #CCCCFF; font-family: Poppins, sans-serif">
+
+  <div class="title">
+    <h3>Things You Can Do During Quarantine</h3>
+    <h6>Share with others here</h6>
+  </div>
   
   <div class="to-do-list">
 
-      <div class="row-justify-content-center">
+
         <div class="col-8 mt-5">
           <form class="form-inline justify-content-center" id="createForm" method="post">
             {% csrf_token %}
@@ -70,7 +78,7 @@
           {% endfor %}
 
         </div>
-      </div>
+
 
 
 
