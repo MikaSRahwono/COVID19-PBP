@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-@login_required(login_url=" /admin/login/?next")
+@login_required(login_url=" /login/")
 def index(request):
     assessment = Assessment.objects.all()
 
