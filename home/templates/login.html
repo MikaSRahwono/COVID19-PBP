@@ -1,22 +1,32 @@
-{% extends "navbar.html" %}
+{% extends "navbar-ecek-ecek.html" %} {% block head %} {% load static %}
+<link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"/>
+{% endblock %}
+
 {% block content %}
 
-<h1>Log In</h1><br>
-<form method="post">
-  {% csrf_token %}
-  {{ form.as_p }}
-  <button type="submit">Log In</button>
-</form>
+<body style="text-align: center; padding-top: 100px">
 
-<br>
+    <h1>Log In</h1><br>
+    <form method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Log In</button>
+    </form>
 
-{% if messages %}
-<div style="text-align: center; color: red">
-    <h5>[ Login Failed ]</h5>
-    {% for message in messages %}
-    <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
-    {% endfor %}
-</div>
-{% endif %}
+    <br>
+
+    {% if messages %}
+    <div style="text-align: center; color: red">
+        <h5>[ Login Failed ]</h5>
+        {% for message in messages %}
+        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+</body>
 
 {% endblock %}

@@ -3,12 +3,13 @@
 :root {
   --primary: #181818;
   --secondary: #828cf6;
-  --ternary: #f4f6fa;
+  --ternary: rgb(244, 246, 250);
 }
 
 .hospital-list_root {
   background-color: var(--primary);
-  margin: 0;
+  margin-top: 4em;
+  margin-bottom: 1em;
   color: var(--ternary);
   font-family: "Poppins", sans-serif;
 }
@@ -31,28 +32,39 @@
   margin-top: 0;
 }
 
+.center img {
+  border: 2px;
+  border-color: var(--primary);
+}
+
 .hospital-list_photo {
   border-radius: 15px;
 }
 
 .hospital-list_card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px 0 rgba(244, 246, 250, 0.3);
   background-color: var(--secondary);
   border-radius: 10px;
   transition: 0.3s;
-  margin: 4vw;
+  margin: 30px;
   padding: 20px;
   position: relative;
 }
 
 .hospital-list_cards {
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .hospital-list_card:hover {
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 16px 0 rgba(244, 246, 250, 0.5);
 }
 
 .hospital-list_container {
   padding: 2px 16px;
+  margin: 20px;
+}
+
+.hospital-list_container h4 {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }

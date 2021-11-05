@@ -9,8 +9,8 @@
 .search-form_root {
   font-family: "Poppins", sans-serif;
   background-color: var(--primary);
-  margin-top: 4em;
-  color: var(--secondary);
+  margin-top: 5em;
+  color: var(--ternary);
 }
 
 .search-form_forms {

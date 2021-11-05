@@ -26,6 +26,7 @@ PRODUCTION = os.environ.get('DATABASE_URL') != None
 SECRET_KEY = "django-insecure-#)&hs(jmcwv6vr(q%l(t0h1dpa*eexi^885+d72-nqq((3t=6)"
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = not PRODUCTION
 
 HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME', '')
@@ -49,6 +50,7 @@ INSTALLED_APPS = [
     'hospital',
     'quiz',
     'data_covid',
+    'motivasi'
 ]
 
 MIDDLEWARE = [
@@ -134,6 +136,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
 STATIC_ROOT = os.path.join(BASE_DIR,  'staticfiles')
 
 # # Make sure the directories exist to prevent errors when doing collectstatic.
