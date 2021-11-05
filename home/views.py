@@ -9,9 +9,11 @@ from django.contrib import messages
 # Create your views here.
 def index(request):
     if request.is_ajax():
-        return JsonResponse({"message": "Welcome back, " + request.user.username + "!"})
-    username = request.user.username
-    print(username)
+        username = request.user.username
+        if (username):
+            return JsonResponse({"message": "Welcome back, " + request.user.username + "!"})
+        else:
+            return JsonResponse({"message": " "})
     # if username:
     #     messages.info(request, username)
     return render(request, 'index.html')
