@@ -25,5 +25,6 @@ urlpatterns = [
     path('hospital/', include('hospital.urls')),
     path('quiz/', include(quiz)),
     path('data-covid/', include(data_covid)),
-    path('motivasi/', include('motivasi.urls'))
+    path('motivasi/', include('motivasi.urls')),
+    path('to-do/', include('to_do.urls'))
 ]

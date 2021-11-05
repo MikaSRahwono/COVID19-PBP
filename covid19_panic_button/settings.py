@@ -27,7 +27,7 @@ SECRET_KEY = "django-insecure-#)&hs(jmcwv6vr(q%l(t0h1dpa*eexi^885+d72-nqq((3t=6)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = not PRODUCTION
+DEBUG = True
 
 HEROKU_APP_NAME = os.getenv('HEROKU_APP_NAME', '')
 
@@ -50,7 +50,8 @@ INSTALLED_APPS = [
     'hospital',
     'quiz',
     'data_covid',
-    'motivasi'
+    'motivasi',
+    'to_do'
 ]
 
 MIDDLEWARE = [
