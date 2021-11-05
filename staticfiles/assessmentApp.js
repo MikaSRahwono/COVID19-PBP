@@ -14,13 +14,13 @@ $(document).ready( () =>{
     if(isCov === "true"){
         $("#hasil-test").text(`Mohon maaf ${nama} anda termasuk individu yang rawan COVID`);
         $("#flav").text("Kami merekomendasikan anda untuk segera melakukan test. Klik tombol dibawah ini untuk mendapakan informasi selengkapnya")
-        $('a').attr("href", "http://www.google.com/")
+        $('a').attr("href", "https://covid19-panic-button.herokuapp.com/hospital/")
         $('button').text("Dapatkan info lokasi test swab");
     }
     else{
         $("#hasil-test").text(`Selamat ${nama}!\nAnda bebas dari covid`);
-        $("#flav").text("Klik tombol dibawah ini untuk mendapakan informasi mengenai covid.")
-        $('a').attr("href", "http://www.facebook.com/")
+        $("#flav").text("Klik tombol dibawah ini untuk mendaftar dan dapatkan informasi mengenai covid.")
+        $('a').attr("href", "https://covid19-panic-button.herokuapp.com/register/")
         $('button').text("Lanjut");
     }
     
