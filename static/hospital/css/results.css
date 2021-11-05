@@ -1,11 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --primary: #181818;
+  --secondary: #828cf6;
+  --ternary: #f4f6fa;
+}
+
 .hospital-list_root {
-  background-color: #fbead9;
+  background-color: var(--primary);
   margin: 0;
+  color: var(--ternary);
+  font-family: "Poppins", sans-serif;
 }
 
 .center {
   display: flex;
   justify-content: center;
+}
+
+.center h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .center p {
@@ -17,24 +32,21 @@
 }
 
 .hospital-list_photo {
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .hospital-list_card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: whitesmoke;
+  background-color: var(--secondary);
   border-radius: 10px;
   transition: 0.3s;
-  margin: 10px;
-  min-width: 300px;
+  margin: 4vw;
   padding: 20px;
   position: relative;
 }
 
 .hospital-list_cards {
-  display: grid;
   justify-content: space-around;
-  grid-template-columns: 30vw 30vw 30vw;
 }
 
 .hospital-list_card:hover {

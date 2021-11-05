@@ -11,17 +11,36 @@
 </head>
 <body class="search-form_root">
     <div class="center">
-        <h1 class="h1">Search hospital</h1>
+        <h1 >Search hospital</h1>
     </div>
     <div class="center">
-        <p class="p">Dimana lokasi kamu saat ini?</p>
+        <p>Dimana lokasi kamu saat ini?</p>
     </div>
     <div class="search-form_forms">
-        <form action="" , method="POST">
+        <form action="" , method="POST", id="locform">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Submit" class="form-control" placeholder="Masukkan lokasi daerah kamu">
+            <input type="submit" value="submit" id="daerah_rs" placeholder="Masukkan lokasi daerah kamu">
         </form>
     </div>
 </body>
+    <script src="https://code.jquery.com/jquery-3.5.0.min.js"
+        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+
+    <script>
+        const form = document.getElementById('locform');
+        form.addEventListener("submit", submitHandler);
+        function submitHandler(e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '/hospital/',
+                data: $("#locform").serialize(),
+                dataType: 'json',
+                success: function () {
+                    window.location = "/hospital/results"
+                }
+            })
+        }
+    </script>
 </html>

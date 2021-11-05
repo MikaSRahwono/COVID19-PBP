@@ -1,21 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+:root {
+  --primary: #181818;
+  --secondary: #828cf6;
+  --ternary: #f4f6fa;
+}
+
 .search-form_root {
-  background-color: #fbead9;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary);
+  margin-top: 4em;
+  color: var(--secondary);
 }
 
 .search-form_forms {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: #f0967c;
+  background-color: var(--secondary);
   border-radius: 10px;
   transition: 0.3s;
   margin: auto;
   width: 40%;
   padding: 20px;
   position: relative;
+  color: var(--primary);
 }
 
 .center {
   display: flex;
   justify-content: center;
+}
+
+.center h1 {
+  margin-bottom: 1em;
 }
 
 .center p {
@@ -36,10 +52,10 @@ form {
 }
 
 input[type="submit"] {
-  background-color: whitesmoke;
+  background-color: var(--ternary);
   border: none;
-  color: #f07c68;
-  padding: 16px 32px;
+  color: var(--primary);
+  padding: 1vw 2vw;
   text-align: center;
   font-weight: bold;
   display: inline-block;
@@ -51,6 +67,13 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background-color: #f07c68;
-  color: whitesmoke;
+  background-color: var(--primary);
+  color: var(--ternary);
+  transition-duration: 0.4s;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-form_forms {
+    width: 80%;
+  }
 }

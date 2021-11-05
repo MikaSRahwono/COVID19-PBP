@@ -71,7 +71,8 @@ def get_hospital(alamat):
 
     return hospital_list
 
-def get_details(hospital_list):
+def get_details(alamat):
+    hospital_list = get_hospital(alamat)
     detail_lists = []
     photo_lists = []
     for hospital in hospital_list:
@@ -104,4 +105,4 @@ def get_details(hospital_list):
                     photo_lists.append(endpoint_photo)
         except:
             continue
-    return detail_lists, photo_lists
+    return zip(detail_lists, photo_lists)
