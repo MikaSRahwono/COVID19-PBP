@@ -1,3 +1,4 @@
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login, authenticate
@@ -7,10 +8,14 @@ from django.contrib import messages
 
 # Create your views here.
 def index(request):
-    username = request.user.username
-    print(username)
-    if username:
-        messages.info(request, username)
+    if request.is_ajax():
+        username = request.user.username
+        if (username):
+            return JsonResponse({"message": "Welcome back, " + request.user.username + "!"})
+        else:
+            return JsonResponse({"message": " "})
+    # if username:
+    #     messages.info(request, username)
     return render(request, 'index.html')
 
 
@@ -37,19 +42,6 @@ def register(request):
     form = UserCreationForm()
     return render(request, 'register.html', {'form': form})
 
-# def register(request):
-#     if request.method == "POST":
-#         form = UserCreationForm(request.POST)
-#         print("a")
-#         if form.is_valid():
-#             user = form.save()
-#             login(request, user)
-#             print("success")
-#             return redirect("../")
-#         else:
-#             messages.error(request, "Login Failed")
-#     form = UserCreationForm()
-#     return render(request, 'register.html', {'form': form})
 
 
 def log_in(request):

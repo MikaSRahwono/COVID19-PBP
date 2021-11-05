@@ -1,5 +1,5 @@
 {% extends "navbar-ecek-ecek.html" %} {% block head %} {% load static %}
-
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 <style>
     body {
         text-align: center;
@@ -27,14 +27,34 @@
     </a>
     <h2>Tekan tombol diatas untuk melanjutkan</h2>
 
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <br><br>
-        <p id="greeting-message" {% if message.tags %} class="{{ message.tags }}"{% endif %}>Welcome back, {{ message }}!</p>
-        {% endfor %}
-    </ul>
-    {% endif %}
+    <br><div id="greeting-message"></div>
+
+    <!-- au ah gelap -->
+    <script>
+        $.ajax({
+            url : '',
+            type: 'GET',
+            enctype: 'multipart/form-data',
+            success: function(response){
+                console.log(response);
+                document.getElementById("greeting-message").innerHTML = response.message;
+            },
+            error: function(error){
+                console.log(error);
+            },
+            cache: false,
+            contentType: false,
+            processData: false,
+        })
+    </script>
+{#    {% if messages %}#}
+{#    <ul class="messages">#}
+{#        {% for message in messages %}#}
+{#        <br><br>#}
+{#        <p id="greeting-message" {% if message.tags %} class="{{ message.tags }}"{% endif %}>Welcome back, {{ message }}!</p>#}
+{#        {% endfor %}#}
+{#    </ul>#}
+{#    {% endif %}#}
 
 </body>
 
