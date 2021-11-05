@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'data_covid',
     'motivasi',
     'shop',
+    'to_do'
 ]
 
 MIDDLEWARE = [
