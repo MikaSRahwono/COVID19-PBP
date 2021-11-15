@@ -33,13 +33,14 @@
                 display: flex;
                 justify-content: flex-end;
                 align-items: center;
-                padding: 30px 10%;
+                padding: 30px 5%;
                 height: 70px;
                 z-index: 5;
             }
             .logo {
                 cursor: pointer;
                 margin-right: auto;
+                padding-left: 10px;
                 width: 125px;
             }
 
@@ -69,7 +70,7 @@
             }
 
             .cta-nav {
-                padding: 0 20px;
+                padding: 0 0 0 20px;
             }
 
             .cta-nav .cta.login button {
@@ -112,6 +113,29 @@
             .nav_links_custom .home-menu a:hover {
                 color: white;
             }
+
+            .footer-content {
+                height: 25vh;
+            }
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                color: #f4f6fa;
+                align-items: center;
+                padding: 0 5vw;
+                background-color: black;
+            }
+
+            .footer-content img {
+                width: 20vw;
+                cursor: pointer;
+            }
+
+            .footer-bottom {
+                text-align: center;
+                color: rgb(95, 94, 94);
+                background-color: rgba(0, 0, 0, 0.5);
+            }
         </style>
     </head>
 
@@ -148,5 +172,23 @@
             </div>
         </header>
         {% block content %} {% endblock content %}
+        <footer>
+            <div class="footer-content">
+                <div class="left">
+                    <h2>A Simple Project Made by Kelompok A08</h2>
+                </div>
+                <div class="right">
+                    <img
+                        src=" {% static 'images/logo.svg' %}"
+                        alt=""
+                        class="footer-logo"
+                    />
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>copyright &copy; Kelompok A08</p>
+            </div>
+        </footer>
     </body>
 </html>
